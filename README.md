@@ -90,6 +90,8 @@ The pipeline runs automatically in the following situations:
 3. **Process and publish results with `performance-reporter`**:
    - This action processes the generated artifacts, publishes them on GitHub Pages, and comments on the Pull Request with links to the performance reports.
 
+An example of this can be seen in [PR #2](https://github.com/dfloresc/clinicjs-pipeline/pull/2). In this PR, you can see an initial comment indicating the performance results of the unchanged version, followed by another comment showing the performance results after making specific changes to increase the processing time. You can click on the links in the comments to view the reports and compare the differences.
+
 ## Note on Publishing Results
 
 This project uses GitHub Pages to publish performance test results, which is suitable for open-source projects. For private or different environments, it is recommended to use another provider that offers hosting and privacy, such as CloudFront, S3, or another private hosting service.
