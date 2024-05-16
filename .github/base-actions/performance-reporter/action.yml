@@ -28,10 +28,6 @@ runs:
       name: "${{ env.short_sha }}-doctor-artifact"
       path: artifacts/performance-tests/${{ env.short_sha }}
 
-  - name: List downloaded artifacts
-    shell: bash
-    run: ls -R artifacts/performance-tests/${{ env.short_sha }}
-
   - name: Deploy to GitHub Pages
     uses: peaceiris/actions-gh-pages@v3
     with:
@@ -55,10 +51,8 @@ runs:
     with:
       github-token: ${{ inputs.gh-token }}
       script: |
-        // TODO: find a way to obtain dynamically the names of the artifacts
-        const projectName = `${{ github.repository }}`.split('/')[1];
-        const doctorReportUrl = `https://${{ github.repository_owner }}.github.io/${projectName}/performance-tests/${{ env.short_sha }}/doctor-artifact/doctor-artifact.html`;
-        const flameReportUrl = `https://${{ github.repository_owner }}.github.io/${projectName}/performance-tests/${{ env.short_sha }}/flame-artifact/flame-artifact.html`;
+        const doctorReportUrl = `https://${{ github.repository_owner }}.github.io/${context.repo.repo}/performance-tests/${{ env.short_sha }}/doctor-artifact/doctor-artifact.html`;
+        const flameReportUrl = `https://${{ github.repository_owner }}.github.io/${context.repo.repo}/performance-tests/${{ env.short_sha }}/flame-artifact/flame-artifact.html`;
 
         github.rest.issues.createComment({
           issue_number: process.env.PR_NUMBER,

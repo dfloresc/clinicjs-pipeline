@@ -68,13 +68,11 @@ runs:
     - name: Generate HTML report
       shell: bash
       run: |
-        echo "FILENAME=$(find .clinic/*.html)" >> $GITHUB_ENV
-        export FOLDER_NAME=$(find .clinic/* -type d -maxdepth 1 |sed "s/.clinic\//""/")
-        echo "FOLDER_NAME=$FOLDER_NAME" >> $GITHUB_ENV
+        FILENAME=$(find .clinic/* -type d -maxdepth 1 |sed "s/.clinic\//""/")
 
         mkdir -p artifacts/performance-tests/${{ inputs.artifact-suffix }}
         mv .clinic/* artifacts/performance-tests/${{ inputs.artifact-suffix }}
-        mv artifacts/performance-tests/${{ inputs.artifact-suffix }}/$FOLDER_NAME.html artifacts/performance-tests/${{ inputs.artifact-suffix }}/${{ inputs.artifact-suffix }}.html
+        mv artifacts/performance-tests/${{ inputs.artifact-suffix }}/$FILENAME.html artifacts/performance-tests/${{ inputs.artifact-suffix }}/${{ inputs.artifact-suffix }}.html
 
     - name: Upload Clinic Report as Artifact
       uses: actions/upload-artifact@v4
