@@ -63,7 +63,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       id-token: write
-      contents: read
+      contents: write
       packages: read
       pull-requests: write
       actions: read
