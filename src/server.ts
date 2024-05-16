@@ -8,7 +8,7 @@ app.get('/process-simulator', (req, res) => {
     console.log('Starting heavy operation...');
     const arrayProcessor = new ArrayProcessor();
     const operationSimulator = new OperationSimulator(arrayProcessor);
-    operationSimulator.simulateHeavyOperation(2500);
+    operationSimulator.simulateHeavyOperation(5000);
     console.log('Operation completed.');
 
     res.status(200).send('OK');

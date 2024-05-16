@@ -55,6 +55,8 @@ jobs:
         javascript-file: dist/server.js
         autocannon-endpoint: /process-simulator
         artifact-suffix: flame-artifact
+        autocannon-amount: 1
+        autocannon-connections: 1
 
   performance-reporter:
     needs: [doctor-performance-tests, flame-performance-tests]
