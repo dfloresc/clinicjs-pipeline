@@ -63,6 +63,6 @@ runs:
 
         | Name       | Description                                                                 | Script/Endpoint     | Link                                                            |
         |------------|-----------------------------------------------------------------------------|---------------------|-----------------------------------------------------------------|
-        | Doctor JS  | Clinic Doctor analyzes Node.js applications to find performance bottlenecks | \`/delay\`          | [View Report](${doctorReportUrl})                               |
-        | Flame JS   | Clinic Flame visualizes CPU utilization to identify performance issues      | \`/delay\`          | [View Report](${flameReportUrl})                                |
+        | Doctor JS  | Clinic Doctor analyzes Node.js applications to find performance bottlenecks | \`/process-simulator\`          | [View Report](${doctorReportUrl})                               |
+        | Flame JS   | Clinic Flame visualizes CPU utilization to identify performance issues      | \`/process-simulator\`          | [View Report](${flameReportUrl})                                |
           `});

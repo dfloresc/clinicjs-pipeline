@@ -34,7 +34,7 @@ jobs:
         gh-token: ${{ secrets.GITHUB_TOKEN }}
         clinic-tool: doctor
         javascript-file: dist/server.js
-        autocannon-endpoint: /delay
+        autocannon-endpoint: /process-simulator
         artifact-suffix: doctor-artifact
 
   flame-performance-tests:
@@ -53,7 +53,7 @@ jobs:
         gh-token: ${{ secrets.GITHUB_TOKEN }}
         clinic-tool: flame
         javascript-file: dist/server.js
-        autocannon-endpoint: /delay
+        autocannon-endpoint: /process-simulator
         artifact-suffix: flame-artifact
 
   performance-reporter:
