@@ -7,7 +7,9 @@
         "start": "node dist/server.js",
         "build": "tsc",
         "serve": "npm run build && npm run start",
-        "dev": "nodemon"
+        "dev": "nodemon",
+        "doctor": "npx clinic doctor --autocannon [ /process-simulator -a 1 -c 1] -- node dist/server.js",
+        "flame": "npx clinic flame --autocannon [ /process-simulator -a 1 -c 1] -- node dist/server.js"
     },
     "author": "Dani Flores",
     "license": "Apache-2.0",
